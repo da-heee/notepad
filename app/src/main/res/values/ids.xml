@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="bigLinearLayout" type="id" />
+    <item name="inputLayout" type="id" />
+    <item name="TV_titleInput" type="id" />
+    <item name="ET_titleInput" type="id" />
+    <item name="TV_contentsInput" type="id" />
+    <item name="ET_contentsInput" type="id" />
+    <item name="outputLayout" type="id" />
+    <item name="TV_titleOutput" type="id" />
+    <item name="TV_contentsOutput" type="id" />
+    <item name="BT_save" type="id" />
+    <item name="BT_delete" type="id" />
+</resources>
