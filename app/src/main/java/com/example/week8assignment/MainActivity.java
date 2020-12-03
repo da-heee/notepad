@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     SharedPreferences sharedPreferences;
 
     private static final String SHARED_PREF = "SHARED_PREF";
-    private static final String USER_INPUT = "STRING_USER";
+    private static final String TITLE_INPUT = "STRING_TITLE";
+    private static final String CONTENTS_INPUT = "STRING_CONTENTS";
 
 
     @Override
@@ -41,15 +42,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TV_title_output = findViewById(R.id.TV_titleOutput);
         TV_contents_output = findViewById(R.id.TV_contentsOutput);
 
-        String getInput = null;
+        String titleInput = null;
+        String contentsInput = null;
 
         save.setOnClickListener(this);
         delete.setOnClickListener(this);
 
-        getInput = sharedPreferences.getString(USER_INPUT,"");
+        titleInput = sharedPreferences.getString(TITLE_INPUT,"");
+        contentsInput = sharedPreferences.getString(CONTENTS_INPUT,"");
 
-        TV_title_output.setText(getInput);
-        TV_contents_output.setText(getInput);
+        TV_title_output.setText(titleInput);
+        TV_contents_output.setText(contentsInput);
 
 
 
@@ -68,8 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 TV_contents_output.setText(contentsInput);
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(USER_INPUT,titleInput);
-                editor.putString(USER_INPUT,contentsInput);
+                editor.putString(TITLE_INPUT,titleInput);
+                editor.putString(CONTENTS_INPUT,contentsInput);
                 editor.apply();
 
                 break;
@@ -79,7 +82,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 TV_contents_output.setText("");
 
                 SharedPreferences.Editor deleteEditor = sharedPreferences.edit();
-                deleteEditor.remove(USER_INPUT);
+                deleteEditor.remove(TITLE_INPUT);
+                deleteEditor.remove(CONTENTS_INPUT);
                 deleteEditor.apply();
 
                 break;
